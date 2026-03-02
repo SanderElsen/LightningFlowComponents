@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Record Type Picklist</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+           
+            <property name="defaultValue" type="String" label="01. Default Value" role="inputOnly"
+                description="The initial value to select. For multi-select, use a semicolon-separated string (e.g., Value1;Value2)."/>
+           
+            <property name="objectApiName" type="String" label="02. Object API Name" role="inputOnly"
+                description="The API Name of the Salesforce object (e.g., Account)."/>
+           
+            <property name="fieldApiName" type="String" label="03. Field API Name" role="inputOnly"
+                description="The API Name of the picklist field (e.g., Type)."/>
+           
+            <property name="labelOverride" type="String" label="04. Label Override" role="inputOnly"
+                description="Overrides the standard field label. If left blank, the field's metadata label is used."/>
+           
+            <property name="helpText" type="String" label="05. Inline Help Text" role="inputOnly"
+                description="Displays a help icon with this text next to the field label."/>
+           
+            <property name="multiSelect" type="Boolean" label="06. Multi-select Picklist" role="inputOnly"
+                description="If true, displays a Dual Listbox for multi-select picklists. If false, shows a standard dropdown."/>
+           
+            <property name="required" type="Boolean" label="07. Required" role="inputOnly"
+                description="If true, the Flow will prevent navigation until a value is selected."/>
+           
+            <property name="readOnlyMode" type="Boolean" label="08. Read Only Mode" role="inputOnly"
+                description="Displays the value as text inside a grey box."/>
+
+
+            <property name="disabled" type="Boolean" label="09. Disabled" role="inputOnly"
+                description="Grey-out the input to prevent user interaction."/>
+
+
+            <property name="useRecordType" type="Boolean" label="10. Record Type Needed?" role="inputOnly"
+                description="If true, filters picklist values based on a specific Record Type."/>
+           
+            <property name="recordTypeIdentifier" type="String" label="11. Record Type Identifier" role="inputOnly"
+                description="Provide the Record Type ID, Developer Name, or Label to filter the values."/>
+           
+            <property name="value" type="String" label="Selected Value (Output)" role="outputOnly"
+                description="The value(s) selected by the user."/>
+               
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

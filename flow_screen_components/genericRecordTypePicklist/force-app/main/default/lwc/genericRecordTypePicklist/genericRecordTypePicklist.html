@@ -1,0 +1,63 @@
+<template>
+    <div class="slds-form-element slds-m-bottom_medium">
+
+
+        <label class="slds-form-element__label">
+            <template if:true={required}>
+                <abbr class="slds-required">*</abbr>
+            </template>
+
+
+            {resolvedLabel}
+
+
+            <template if:true={helpText}>
+                <lightning-helptext content={helpText}></lightning-helptext>
+            </template>
+        </label>
+
+
+        <template if:true={isDisplayOnly}>
+            <div class="slds-form-element__control">
+                <div class="slds-box slds-box_xx-small slds-theme_shade">
+                    <p class="slds-text-body_regular slds-truncate">{formattedValue}</p>
+                </div>
+            </div>
+        </template>
+
+
+        <template if:false={isDisplayOnly}>
+            <template if:false={multiSelect}>
+                <lightning-combobox
+                    variant="label-hidden"
+                    value={singleValue}
+                    options={options}
+                    onchange={handleSingleChange}
+                    disabled={disabled}>
+                </lightning-combobox>
+            </template>
+
+
+            <template if:true={multiSelect}>
+                <lightning-dual-listbox
+                    variant="label-hidden"
+                    source-label="Available"
+                    selected-label="Selected"
+                    options={options}
+                    value={multiValueArray}
+                    onchange={handleMultiChange}
+                    disabled={disabled}>
+                </lightning-dual-listbox>
+            </template>
+        </template>
+
+
+        <template if:true={errorMessage}>
+            <div class="slds-form-element__help slds-text-color_error">
+                {errorMessage}
+            </div>
+        </template>
+
+
+    </div>
+</template>
