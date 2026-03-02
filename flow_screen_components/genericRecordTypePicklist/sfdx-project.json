@@ -1,12 +1,20 @@
 {
   "packageDirectories": [
     {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "genericRecordTypePicklist",
+      "versionDescription": ""
     }
   ],
   "name": "genericRecordTypePicklist",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "65.0"
+  "sourceApiVersion": "65.0",
+  "packageAliases": {
+    "genericRecordTypePicklist": "0HoHs000000PITqKAO",
+    "genericRecordTypePicklist@1.0.0": "04tHs000001RN99IAG"
+  }
 }
